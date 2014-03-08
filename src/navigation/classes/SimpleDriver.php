@@ -603,12 +603,12 @@ class SimpleDriver
         }
     }
 
+
     /**
      * Returns uri link based on node uri.
      *
-     * @access  public
-     * @param   array $aSections
-     * @return  string
+     * @param $section
+     * @return mixed|string
      */
     function makeLinkFromSection(&$section)
     {
@@ -647,6 +647,7 @@ class SimpleDriver
             }
         }
 
+//        $oUrl = $this->output->currentUrl;
         $url = ($this->_disableLinks)
             ? SGL_Url::makeLink('', '', '') . 'staticId/' . $section->section_id . '/rid/' . $this->_rid . '/'
             : SGL_Url::makeLink('', $managerName, $moduleName) . $qs;

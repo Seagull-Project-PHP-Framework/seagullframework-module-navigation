@@ -57,14 +57,14 @@ class SimpleRenderer
         $this->driver = $navDriver;
     }
 
+
     /**
      * Returns HTML unordered list with subsections nested; can be used with CSS for navigation
      * tabs. Adds attribute class="current" to <li> tags.
      *
-     * @access  public
-     * @param   array $sectionNodes   array of DataObjects_Section objects
-     * @param   int $currentRenderedLevel
-     * @return  string | false
+     * @param $aSectionNodes
+     * @param int $currentRenderedLevel
+     * @return bool|string
      */
     function toHtml(&$aSectionNodes, $currentRenderedLevel = 0)
     {

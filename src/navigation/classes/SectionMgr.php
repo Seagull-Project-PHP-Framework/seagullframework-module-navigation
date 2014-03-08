@@ -43,7 +43,6 @@ require_once SGL_MOD_DIR  . '/default/classes/DefaultDAO.php';
 require_once SGL_MOD_DIR  . '/navigation/classes/NavigationDAO.php';
 require_once SGL_MOD_DIR  . '/user/classes/UserDAO.php';
 require_once SGL_MOD_DIR  . '/default/classes/ModuleMgr.php';
-require_once SGL_CORE_DIR . '/Delegator.php';
 
 /**
  * To administer sections.

@@ -37,8 +37,6 @@
 // | Authors:   Andrey Podshivalov  <planetaz@gmail.com>                       |
 // +---------------------------------------------------------------------------+
 
-require_once SGL_CORE_DIR . '/NestedSet.php';
-
 /**
  * Data access methods for the navigation module.
  *
@@ -252,13 +250,9 @@ class NavigationDAO extends SGL_Manager
     }
 
     /**
-     * Moves section.
-     *
-     * @access  public
-     *
-     * @param   int $sectionId
-     * @param   int $targedId
-     * @param   string $direction BE | AF
+     * @param int $sectionId
+     * @param int $targetId
+     * @param null $direction
      */
     function moveSection($sectionId = 0, $targetId = 0, $direction = null)
     {
@@ -750,7 +744,7 @@ class NavigationDAO extends SGL_Manager
         //  deal with additional params
         if (!(empty($section['add_params']))) {
 
-            //  handle params abstractly to later accomodate traditional urls
+            //  handle params abstractly to later accommodate traditional urls
             //  also strip blank array elements caused by input like '/foo/bar/'
             $params = array_filter(explode('/', $section['add_params']), 'strlen');
             $section['resource_uri'] .= implode($separator, $params);
